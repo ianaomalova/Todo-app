@@ -1,12 +1,13 @@
 import style from './Button.module.css'
 
-const Button = ({onСlick, children, title, disable = false}) => {
+const Button = (props) => {
+  const {children, disabled = false, ...otherProps} = props
+  console.log(props)
   return (
     <button
+      {...otherProps}
       className={style.myButton}
-      onClick={onСlick}
-      disabled={disable}
-      title={title}
+      disabled={disabled}
     >
       {children}
     </button>)

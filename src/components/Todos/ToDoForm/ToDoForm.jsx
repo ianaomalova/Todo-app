@@ -1,6 +1,7 @@
 import style from './ToDoForm.module.css'
 import {useState} from 'react';
 import { MdAddTask } from "react-icons/md";
+import Button from '../../UI/Button.jsx';
 
 const ToDoForm = ({addTodo}) => {
   const [text, setText] = useState('')
@@ -21,10 +22,17 @@ const ToDoForm = ({addTodo}) => {
           value={text}
           onChange={event => setText(event.target.value)}
         />
-        <button
+        {/*<button*/}
+        {/*  type='submit'*/}
+        {/*  disabled={!text.trim()}*/}
+        {/*><MdAddTask/>*/}
+        {/*</button>*/}
+        <Button
+          title='add'
           type='submit'
-        ><MdAddTask />
-        </button>
+          disabled={!text.trim()}
+        ><MdAddTask/>
+        </Button>
       </form>
     </div>
   )

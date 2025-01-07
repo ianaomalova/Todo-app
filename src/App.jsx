@@ -52,17 +52,21 @@ function App() {
   return (
     <>
       <h1>To Do App</h1>
+
       <ToDoForm addTodo={addTodoHandler}/>
-      {todos.length >0 && <ToDoActions
+
+      {todos.length > 0 && <ToDoActions
         resetTodo={resetTodoHandler}
         deleteCompletedTodo={deleteCompletedTodosHandler}
         completedTodosExist={!!completedTodosCount}
       />}
+
       <ToDoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHander}
       />
+
     </>
   )
 }
