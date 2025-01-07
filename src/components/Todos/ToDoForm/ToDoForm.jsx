@@ -22,15 +22,11 @@ const ToDoForm = ({addTodo}) => {
           value={text}
           onChange={event => setText(event.target.value)}
         />
-        {/*<button*/}
-        {/*  type='submit'*/}
-        {/*  disabled={!text.trim()}*/}
-        {/*><MdAddTask/>*/}
-        {/*</button>*/}
         <Button
-          title='add'
+          title='Добавить задачу'
           type='submit'
           disabled={!text.trim()}
+          style={{ padding: '11px 11px' }}
         ><MdAddTask/>
         </Button>
       </form>
