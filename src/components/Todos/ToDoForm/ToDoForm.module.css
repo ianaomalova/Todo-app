@@ -19,6 +19,6 @@
     }
     &:focus {
         outline: none;
-        border: 2px solid #646cff;
+        border: 1px solid #646cff;
     }
 }
