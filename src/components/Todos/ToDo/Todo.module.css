@@ -8,6 +8,11 @@
     width: 600px;
     border-radius: 10px;
     border: 1px solid #646cff;
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
 }
 
 .titleTask {
