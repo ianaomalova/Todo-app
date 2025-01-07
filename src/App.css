@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+
+.line {
+  width: 100%;
+  color: #646cff;
+  height: 1px;
+}

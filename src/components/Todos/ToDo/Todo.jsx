@@ -1,10 +1,20 @@
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
+import { MdOutlineDelete } from "react-icons/md";
+import { GrTask } from "react-icons/gr";
+import cn from 'classnames';
 import style from './Todo.module.css'
 
-const Todo = ({todo, index, deleteTodo}) => {
+const Todo = ({todo, deleteTodo, toggleTodo}) => {
   return (
-    <div className={style.toDoElement} onDoubleClick={() => deleteTodo(index)}>
-      <img src='/src/assets/icons/check.png' alt=''/>
-      <h2 className={style.titleTask}>{todo}</h2>
+    <div className={cn(style.toDoElement)} onDoubleClick={() => deleteTodo(todo.id)}>
+      <div className={style.leftInfo}>
+        <GrTask className={style.iconTask}/>
+        <p className={style.titleTask}>{todo.text}</p>
+      </div>
+      <div className={style.rightInfo}>
+        <IoCheckmarkDoneSharp className={style.icon} onClick={() => toggleTodo(todo.id)} />
+        <MdOutlineDelete className={style.icon} onClick={() => deleteTodo(todo.id)}/>
+      </div>
     </div>
   )
 }

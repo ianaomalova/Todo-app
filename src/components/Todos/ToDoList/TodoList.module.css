@@ -1,0 +1,13 @@
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >h2 {
+        display: inline;
+        margin-right: 10px;
+    }
+    >img {
+        width: 24px;
+        height: 24px;
+    }
+}

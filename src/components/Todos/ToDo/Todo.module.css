@@ -2,20 +2,79 @@
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
     color-scheme: dark;
     height: 20px;
     width: 600px;
     border-radius: 10px;
     border: 1px solid #646cff;
-    img {
+    .iconTask {
         width: 20px;
         height: 20px;
-        margin-right: 10px;
+        margin-right: 15px;
+        color: dodgerblue;
+        line-height: 1;
     }
+}
+
+.leftInfo {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:first-child:hover {
+    color: green;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.icon:nth-child(2):hover {
+    color: red;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.rightInfo {
+    display: flex;
+    align-items: center;
 }
 
 .titleTask {
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.completed {
+    opacity: 0.7;
+    border-color: #4caf50;
+    background-color: #2e2e2e;
+}
+
+.completed .titleTask {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.completed .iconTask {
+    color: #888;
+}
+
+.completed .icon:first-child {
+    color: #4caf50;
+}
+
+.completed .icon:nth-child(2) {
+    color: #888;
+    &:hover {
+        color: red;
+    }
 }

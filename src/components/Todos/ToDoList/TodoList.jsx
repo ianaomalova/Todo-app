@@ -1,13 +1,20 @@
 import Todo from '../ToDo/Todo.jsx';
+import style from './TodoList.module.css'
 
-const ToDoList = ({todos, deleteTodo}) => {
+const ToDoList = ({todos, deleteTodo, toggleTodo}) => {
   return (
     <>
       {todos.length > 0 ?
-        todos.map((todo, index) => {
-          return <Todo key={index} todo={todo} deleteTodo={deleteTodo} index={index} />
+        todos.map((todo) => {
+          return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
       }) :
-        <h2>To do list is empty</h2>}
+        (
+          <div className={style.empty}>
+            <h2>Список задач пуст </h2>
+            <img src="/src/assets/icons/party-popper.png" alt="Empty list" />
+          </div>
+        )
+      }
     </>
   )
 }
