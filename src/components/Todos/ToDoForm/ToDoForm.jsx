@@ -16,14 +16,14 @@ const ToDoForm = ({addTodo}) => {
         <input
           className={style.inputForm}
           type='text'
-          placeholder='Enter new todo'
+          placeholder='Новая задача'
           value={text}
           onChange={event => setText(event.target.value)}
         />
         <button
           type='submit'
           className='btn btn-primary'
-        >Submit
+        >Добавить
         </button>
       </form>
     </div>
