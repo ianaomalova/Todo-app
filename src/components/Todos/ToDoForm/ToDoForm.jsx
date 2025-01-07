@@ -1,5 +1,6 @@
 import style from './ToDoForm.module.css'
 import {useState} from 'react';
+import { MdAddTask } from "react-icons/md";
 
 const ToDoForm = ({addTodo}) => {
   const [text, setText] = useState('')
@@ -22,8 +23,7 @@ const ToDoForm = ({addTodo}) => {
         />
         <button
           type='submit'
-          className='btn btn-primary'
-        >Добавить
+        ><MdAddTask />
         </button>
       </form>
     </div>

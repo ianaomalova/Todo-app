@@ -1,10 +1,10 @@
 import style from './Button.module.css'
 
-const Button = ({onclick, children, title, disable = false}) => {
+const Button = ({onСlick, children, title, disable = false}) => {
   return (
     <button
       className={style.myButton}
-      onClick={onclick}
+      onClick={onСlick}
       disabled={disable}
       title={title}
     >

@@ -17,7 +17,7 @@ function App() {
       text: text,
       completed: false
     }
-    setTodos([...todos, newTask])
+    setTodos([newTask, ...todos])
   }
 
   const deleteTodoHandler = (id) => {
@@ -27,9 +27,16 @@ function App() {
   }
 
   const toggleTodoHander = (id) => {
-    setTodos(todos.map(todo => {
+    const updatedTodos = todos.map(todo => {
       return todo.id === id ? {...todo, completed: !todo.completed} : {...todo}
-    }))
+    })
+
+    const sorted = [
+      ...updatedTodos.filter(todo => !todo.completed),
+      ...updatedTodos.filter(todo => todo.completed)
+    ]
+
+    setTodos(sorted);
   }
 
   const deleteCompletedTodosHandler = () => {
