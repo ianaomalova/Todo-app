@@ -3,10 +3,13 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 import ToDoForm from './components/Todos/ToDoForm/ToDoForm.jsx';
 import ToDoList from './components/Todos/ToDoList/TodoList.jsx';
+import ToDoActions from './components/Todos/ToDoActions/ToDoActions.jsx';
 
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const completedTodosCount = todos.filter(todo => todo.completed).length;
+  console.log(completedTodosCount);
 
   const addTodoHandler = (text) => {
     const newTask = {
@@ -29,11 +32,25 @@ function App() {
     }))
   }
 
+  const deleteCompletedTodosHandler = () => {
+    setTodos(todos.filter(todo => {
+      return !todo.completed;
+    }))
+  }
+
+  const resetTodoHandler= () => {
+    setTodos([]);
+  }
+
   return (
     <>
       <h1>To Do App</h1>
       <ToDoForm addTodo={addTodoHandler}/>
-      <div className='line'></div>
+      {todos.length >0 && <ToDoActions
+        resetTodo={resetTodoHandler}
+        deleteCompletedTodo={deleteCompletedTodosHandler}
+        completedTodosExist={!!completedTodosCount}
+      />}
       <ToDoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
